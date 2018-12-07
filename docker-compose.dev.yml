@@ -1,6 +1,8 @@
 version: '3'
 services:
   api:
+    env_file:
+    - ./api/.env
     build:
       context: ./api
       dockerfile: Dockerfile.dev
@@ -8,8 +10,6 @@ services:
      - "8000:8000"
     volumes:
      - ./api:/api
-    enviroment:
-      - API_PORT: 8000
     # depends_on:
     #   - database
   # web:
