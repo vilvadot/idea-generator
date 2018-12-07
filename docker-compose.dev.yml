@@ -10,11 +10,11 @@ services:
      - "8000:8000"
     volumes:
      - ./api:/api
-    # depends_on:
-    #   - database
-  # web:
-  #   build:
-  #   ports:
-  #   - "8001:8001"
-  # database:
-  #   image: "mongo:latest"
+    depends_on:
+      - database
+    links:
+      - database
+  database:
+    image: "mongo:latest"
+    ports:
+      - '27018:27017'
