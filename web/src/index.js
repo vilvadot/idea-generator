@@ -1,9 +1,5 @@
-const {API_URI} = process.env
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
 
-fetch(`${API_URI}`)
-.then(res => {
-  return res.json()
-})
-.then(body => {
-  console.log(body.message)
-})
+ReactDOM.render(<App />, document.getElementById('root'));
