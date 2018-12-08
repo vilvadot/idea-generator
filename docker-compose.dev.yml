@@ -14,7 +14,19 @@ services:
       - database
     links:
       - database
+  web:
+    env_file:
+    - ./web/.env
+    build:
+      context: ./web
+      dockerfile: Dockerfile.dev
+    volumes:
+     - ./web:/web
+    ports:
+     - "7777:7777"
+    # depends_on:
+    #   - api
   database:
     image: "mongo:latest"
     ports:
-      - '27018:27017'
+      - "27018:27017"

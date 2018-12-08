@@ -12,5 +12,17 @@ services:
       - database
     links:
       - database
+  web:
+    env_file:
+    - ./web/.env
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+     - "8080:8080"
+    depends_on:
+      - api
+    links:
+      - api
   database:
     image: "mongo:latest"
