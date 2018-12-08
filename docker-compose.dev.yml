@@ -24,8 +24,8 @@ services:
      - ./web:/web
     ports:
      - "7777:7777"
-    # depends_on:
-    #   - api
+    depends_on:
+      - api
   database:
     image: "mongo:latest"
     ports:

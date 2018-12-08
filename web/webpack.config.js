@@ -1,12 +1,16 @@
 const path = require('path');
+require('dotenv').config()
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {EnvironmentPlugin} = require('webpack');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   filename: 'index.html',
   inject: 'body'
 })
+
+const EnvironmentVariables = new EnvironmentPlugin(['API_URI', 'NODE_ENV'])
 
 module.exports = {
   entry: './src/index.js',
@@ -37,5 +41,8 @@ module.exports = {
     port: 7777,
     host: "0.0.0.0"
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig, 
+    EnvironmentVariables
+  ]
 }
