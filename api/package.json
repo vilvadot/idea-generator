@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0",
+    "jest": "^23.6.0",
     "nodemon": "^1.18.7"
   }
 }
