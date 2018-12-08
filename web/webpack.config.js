@@ -18,6 +18,7 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'main.js'
   },
+  mode: 'development',
   module: {
     rules: [
       { test: /\.css$/,
