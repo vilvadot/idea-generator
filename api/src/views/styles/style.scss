@@ -1,3 +1,28 @@
+@import 'reset';
+
 body{
-  color: red;
+  background: black;
+  color:white;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+h1{
+  font-size: 50px;
+}
+
+#idea{
+  text-align: center;
+  &::first-letter{
+    text-transform: capitalize;
+  }
+}
+
+.container{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0 40px;
 }
