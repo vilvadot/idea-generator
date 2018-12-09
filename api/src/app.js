@@ -1,8 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const cors = require('cors')
+const bodyParser = require('body-parser');
 const app = express()
+
 require('dotenv').config()
+
+const routes = require('./routes')
 
 const {PORT, DATABASE, WEB_URI} = process.env
 
@@ -18,13 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.json(
-    {
-      message: 'hello!'
-    }
-  )
-})
+app.use(bodyParser.json());
+
+app.use('/', routes);
 
 app.listen(PORT)
 
