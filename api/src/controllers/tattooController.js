@@ -95,14 +95,15 @@ const generateTattooIdea = () => {
   return cleanSpaces(idea)
 }
 
-
-for(i of Array(20)){
-  console.log(generateTattooIdea())
-}
-
 exports.generateTattoo = (req, res) => {
   res.json({
-    idea: generateSubject()
+    idea: generateTattooIdea()
   })
 }
 
+exports.renderTattoo = (req, res) => {
+  res.render('main', { 
+    title: 'Tattoo', 
+    idea: generateTattooIdea() 
+    })
+}
