@@ -18,8 +18,7 @@ const getArticle = word => {
 const addPlural = (word) => {
   const lastLetter = word[word.length - 1]
   const endsInS = lastLetter == 's'
-  const endsInH = lastLetter == 'h'
-  const isEdgeCase = endsInH || endsInS
+  const isEdgeCase = endsInS
   
   const suffix = isEdgeCase ? 'es' : 's'
 
