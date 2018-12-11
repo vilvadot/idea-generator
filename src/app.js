@@ -5,7 +5,7 @@ const app = express()
 
 const routes = require('./routes')
 
-const {PORT} = process.env
+const PORT = process.env.PORT || 7777
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -24,4 +24,4 @@ app.use('/', routes);
 
 app.listen(PORT)
 
-console.log('Server running 👍')
+console.log(`Server running in port ${PORT} 👍`)
