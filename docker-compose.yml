@@ -1,16 +1,10 @@
 version: '3'
 services:
   api:
-    env_file:
-    - ./api/.env
-    build:
-      context: ./api
-      dockerfile: Dockerfile
+    build: ./
     ports:
      - "8000:8000"
-  #   depends_on:
-  #     - database
-  #   links:
-  #     - database
-  # database:
-  #   image: "mongo:latest"
+    volumes:
+     - ./:/app
+     - /app/node_modules
+    command: ["npm", "run", "dev"]

@@ -3,17 +3,7 @@ const adjectives = require('../dictionaries/tattoo/adjectives.json')
 const connectors = require('../dictionaries/tattoo/connectors.json')
 const styles = require('../dictionaries/tattoo/styles.json')
 const actions = require('../dictionaries/tattoo/actions.json')
-
-// TODO: Refactor to class?
-
-const pluralArticles = [
-  'multiple',
-  'several',
-  'a couple',
-  'two',
-  'three',
-  ''
-]
+const pluralArticles = require('../dictionaries/plurals.json')
 
 const CHANCES = {
   action: .2,
@@ -22,23 +12,23 @@ const CHANCES = {
   style: .6,
 }
 
-const getStyle = () => {
-  const style = getRandomItem(styles)
-
-  return `in ${style} style`
-}
-
-const addPlural = (message) => {
-  const chanceDefeated = rollSucceeds(CHANCES.plural)
-  const lastLetter = message[message.length - 1]
-  const suffix = lastLetter == 's' ? 'es' : 's'
-  return chanceDefeated ? `${message}${suffix}` : message
-}
-
+// Proc
 const getRandomItem = (array) => {
   const randomId = Math.floor(Math.random() * array.length)
   return array[randomId]
 }
+
+const rollSucceeds = (chance) => {
+  const randomNum = Math.random()
+  return randomNum > (1 - chance)
+}
+
+const maybe = (content, chanceToAppear) => {
+  const chanceDefeated = rollSucceeds(chanceToAppear)
+  return chanceDefeated ? content : ''
+}
+
+// Text
 
 const addArticle = word => {
   const vowels = ['a', 'e', 'i', 'o', 'u']
@@ -52,18 +42,23 @@ const addArticle = word => {
   return `${article} ${word}`
 }
 
-const rollSucceeds = (chance) => {
-  const randomNum = Math.random()
-  return randomNum > (1 - chance)
-}
-
-const maybe = (content, chanceToAppear) => {
-  const chanceDefeated = rollSucceeds(chanceToAppear)
-  return chanceDefeated ? content : ''
+const addPlural = (message) => {
+  const chanceDefeated = rollSucceeds(CHANCES.plural)
+  const lastLetter = message[message.length - 1]
+  const suffix = lastLetter == 's' ? 'es' : 's'
+  return chanceDefeated ? `${message}${suffix}` : message
 }
 
 const cleanSpaces = (string) => {
   return string.replace(/\s\s+/g, ' ')
+}
+
+// Tattoo
+
+const getStyle = () => {
+  const style = getRandomItem(styles)
+
+  return `in ${style} style`
 }
 
 const getExtraSubject = () => {

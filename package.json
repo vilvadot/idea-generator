@@ -1,0 +1,30 @@
+{
+  "name": "idea-generator",
+  "version": "1.0.0",
+  "description": "Spike your creativity and generate ideas",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "build": "npm run styles:build && npm run start",
+    "styles:watch": "parcel src/styles/style.scss --out-dir src/public/css",
+    "styles:build": "parcel build src/styles/style.scss --out-dir src/public/css",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "chai": "^4.2.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.7",
+    "parcel": "^1.10.3",
+    "sass": "^1.15.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
