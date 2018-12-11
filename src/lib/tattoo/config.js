@@ -1,8 +1,8 @@
 module.exports = {
   CHANCES: {
-    action: 0.2,
-    extraSubject: 1,
-    plural: 0.1,
-    style: 0.2
+    action: .5,
+    extraSubject: .2,
+    plural: .2,
+    style: .3
   }
 };

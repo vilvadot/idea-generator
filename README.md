@@ -1,3 +1,2 @@
-TODO: Documentar minimal steps
-TODO: Test deploy to now
-TODO: Test build
+* TODO: Testear con Cypress
+* TODO: Tests unitarios

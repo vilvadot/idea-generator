@@ -12,7 +12,7 @@ const rollSucceeds = (chance = .5) => {
 
 const maybe = (fun, chanceToAppear) => {
   const functionCalled = rollSucceeds(chanceToAppear)
-  if(functionCalled) fun()
+  if(functionCalled) return fun()
 }
 
 module.exports = {

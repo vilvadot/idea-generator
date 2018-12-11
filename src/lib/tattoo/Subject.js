@@ -2,12 +2,11 @@ const subjects = require('../../dictionaries/tattoo/subjects.json')
 const adjectives = require('../../dictionaries/tattoo/adjectives.json')
 const actions = require('../../dictionaries/tattoo/actions.json')
 const {getRandomItem, maybe, rollSucceeds} = require('../procedural')
-const {getArticle, addPluralIfNeeded, cleanSpaces} = require('../text')
+const {getArticle, addPlural} = require('../text')
 const {CHANCES} = require('./config')
 
 class Subject{
   constructor(){
-    const CHANCE_OF_MULTIPLE = .3
     this.action = ''
     this.noun = ''
     this.isMultipleThings = rollSucceeds(CHANCES.plural)
@@ -26,10 +25,13 @@ class Subject{
 
   _generateNoun(){
     const noun = getRandomItem(subjects)
-    const nounWithNumber = addPluralIfNeeded(noun)
-    const article = getArticle(nounWithNumber)
+    let randomNoun = noun
+    if(this.isMultipleThings){
+      randomNoun = addPlural(noun)
+    }
+    const article = getArticle(randomNoun)
 
-    this.noun = `${article} ${nounWithNumber}`
+    this.noun = `${article} ${randomNoun}`
   }
 
   getDescription(){
