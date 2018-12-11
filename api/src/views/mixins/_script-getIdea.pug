@@ -1,0 +1,13 @@
+mixin getIdea(section = '')
+  script.
+    const generateNewIdea = () => {
+    const endpoint = !{JSON.stringify(endpoint)};
+      fetch(`/api/${endpoint}`)
+      .then(res => res.json())
+      .then(data => replaceIdea(data.idea))
+    }
+
+    const replaceIdea = (idea) => {
+      const ideaSelector = document.querySelector('#idea>h1')
+      ideaSelector.innerText = idea
+    }

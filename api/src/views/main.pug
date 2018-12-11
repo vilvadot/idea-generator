@@ -1,5 +1,10 @@
 extends layout
 
+include mixins/_script-getIdea
+
 block content
-  .container
-    h1#idea #{idea}
+  div(class='container background--'+background)
+    #idea
+      h1 #{idea}
+    .button(onClick='generateNewIdea()') Generate idea
+  +getIdea(endpoint)

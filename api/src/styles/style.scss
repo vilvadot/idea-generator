@@ -1,0 +1,64 @@
+@import 'reset';
+
+body{
+  color:white;
+  font-family: 'Comfortaa', cursive;
+  overflow: hidden;
+  font-size:12px;
+}
+
+html{
+  @media (max-width: 500px) { 
+    font-size:10px;
+  }
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  &::first-letter{
+    text-transform: capitalize;
+  }
+}
+
+.background--red{
+  background: #F57676;
+}
+
+#idea{
+  height: 300px;
+  display:flex;
+  align-items: center;
+  text-align: center;
+}
+
+.button{
+  background: rgba(255,255,255,0.10);
+  border: 2px solid rgba(255,255,255,.8);
+  color: rgba(255,255,255,.9);
+  border-radius: 100px;
+  padding:1rem 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  width:100%;
+  max-width:200px;
+  &:hover{
+    cursor:pointer;
+    background: rgba(255,255,255,0.20);
+    border-color: white;
+    color:white;
+  }
+}
+
+.container{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0 15rem;
+  @media (max-width: 500px) { 
+    padding:0 10rem;
+  }
+}

@@ -19,7 +19,7 @@ const CHANCES = {
   action: .2,
   extraSubject: .5,
   plural:.05,
-  style: .1,
+  style: .6,
 }
 
 const getStyle = () => {
@@ -95,6 +95,10 @@ const generateTattooIdea = () => {
   return cleanSpaces(idea)
 }
 
+for (i of Array(20)){
+  console.log(generateTattooIdea())
+}
+
 exports.generateTattoo = (req, res) => {
   res.json({
     idea: generateTattooIdea()
@@ -104,6 +108,8 @@ exports.generateTattoo = (req, res) => {
 exports.renderTattoo = (req, res) => {
   res.render('main', { 
     title: 'Tattoo', 
-    idea: generateTattooIdea() 
+    idea: generateTattooIdea(),
+    endpoint: 'tattoo',
+    background: 'red'
     })
 }
