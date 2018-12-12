@@ -20,56 +20,75 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none; }
+  content: "";
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 body {
   color: white;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   overflow: hidden;
-  font-size: 12px; }
+  font-size: 12px;
+}
 
 @media (max-width: 500px) {
   html {
-    font-size: 10px; } }
+    font-size: 10px;
+  }
+}
 
 h1 {
   font-size: 3rem;
   font-weight: 700;
-  line-height: 4rem; }
-  h1::first-letter {
-    text-transform: capitalize; }
+  line-height: 4rem;
+}
+h1::first-letter {
+  text-transform: capitalize;
+}
 
 .background--red {
-  background: #F57676; }
+  background: #F57676;
+}
 
 #idea {
   height: 300px;
   display: flex;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+}
+@media (max-width: 500px) {
+  #idea {
+    height: 80vh;
+  }
+}
 
 .button {
   background: rgba(255, 255, 255, 0.1);
@@ -79,11 +98,13 @@ h1 {
   font-size: 1.5rem;
   text-align: center;
   width: 100%;
-  max-width: 200px; }
-  .button:hover {
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: white; }
+  max-width: 200px;
+}
+.button:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
 
 .container {
   height: 100%;
@@ -91,7 +112,10 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 15%; }
-  @media (max-width: 500px) {
-    .container {
-      padding: 0 10rem; } }
+  padding: 0 15%;
+}
+@media (max-width: 500px) {
+  .container {
+    padding: 0 5%;
+  }
+}

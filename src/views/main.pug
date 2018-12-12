@@ -6,5 +6,5 @@ block content
   div(class='container background--'+background)
     #idea
       h1 #{idea}
-    .button(onClick='generateNewIdea()') More Ideas 💡
+    .button#generate__button(onClick='generateNewIdea()') More Ideas 💡
   +getIdea(endpoint)

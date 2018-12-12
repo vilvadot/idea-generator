@@ -11,7 +11,8 @@
     "dev": "nodemon src/app.js",
     "styles:watch": "parcel src/styles/style.scss --out-dir src/public/css",
     "styles:build": "parcel build src/styles/style.scss --out-dir src/public/css",
-    "test": "jest"
+    "test": "jest",
+    "e2e": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -26,5 +27,8 @@
     "parcel": "^1.10.3",
     "pug": "^2.0.3",
     "sass": "^1.15.2"
+  },
+  "devDependencies": {
+    "cypress": "^3.1.3"
   }
 }
