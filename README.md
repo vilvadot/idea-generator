@@ -1,11 +1,16 @@
-* TODO: Arreglar Docker
-* TODO: Testear con Cypress
-* TODO: Tests unitarios
-* TODO: Hacer progressive
+## TO-DO
 
-* Ideas para generadores:
-- [ ] Tattoos
-- [ ] Personajes
-- [ ] Mundos/Planetas
-- [ ] Nombres
+
+
+- [ ] Fix Docker
+- [ ] Unit tests
+- [ ] Make progressive webb App
+- [ ] Opengraph images
+- [ ] Favicon
+
+## Generators
+- [x] Tattoos
+- [ ] Character descriptions
+- [ ] Worlds/Planets names
+- [ ] Character names
 - [ ] Cyberpunk
